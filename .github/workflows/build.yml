@@ -2,7 +2,7 @@
 name: Build
 on:
   push:
-    branches: [ main ]
+  pull_request: 
     
   workflow_dispatch:
     inputs:
@@ -16,7 +16,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     container: 
-       image: devkitpro/devkita64
+      ##image: 'devkitpro/devkita64'
+      image: 'ghcr.io/irneracoonovich/devkita64'
     steps:
       - name: checkout repo
         uses: actions/checkout@v4
